@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.wanpu.tantandemo.main.PersonDetailActivity">
+
+    <data>
+        <variable
+            name="click"
+            type="com.wanpu.tantandemo.main.PersonDetailActivity.HandlerClick"/>
+        <variable
+            name="person"
+            type="com.wanpu.tantandemo.PersonBean"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/personImg"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            app:loadImage="@{person.imgUrl.get()}"
+            android:onClick="@{click.onImgClick}"
+            app:placeholderImage="@android:color/darker_gray"
+            app:progressBarImage="@drawable/phone_default"
+            app:progressBarImageScaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:id="@+id/linMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:layout_below="@id/personImg"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@{person.name.get()}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_sex_age_bg"
+                    android:drawableLeft="@{person.sex.get() == 0?@drawable/man_icon:@drawable/waman_icon}"
+                    android:drawablePadding="3dp"
+                    android:text="@{String.valueOf(person.age.get())}"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/shape_constellation_bg"
+                    android:text="@{person.constell.get()}"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@{person.job.get()}"
+                android:textColor="@color/careStickColor"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/igUnlike"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:src="@drawable/item_unlike"/>
+
+        <ImageView
+            android:id="@+id/igLike"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:src="@drawable/item_like"/>
+    </RelativeLayout>
+
+</layout>

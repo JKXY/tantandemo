@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_left_tantan"
+        android:icon="@drawable/left_icon_tantan"
+        android:title="探探"/>
+    <item
+        android:id="@+id/nav_left_anonymous"
+        android:icon="@drawable/left_icon_anonymous"
+        android:title="匿名暗恋表白"/>
+    <item
+        android:id="@+id/nav_left_set"
+        android:icon="@drawable/left_icon_set"
+        android:title="设置"/>
+    <item
+        android:id="@+id/nav_left_new"
+        android:icon="@drawable/left_icon_new"
+        android:title="新手引导"/>
+    <item
+        android:id="@+id/nav_left_recommend"
+        android:icon="@drawable/left_icon_recommend"
+        android:title="推荐给好友"/>
+</menu>

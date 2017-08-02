@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="regist"
+            type="com.wanpu.tantandemo.login.RegistTwoViewModel"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wanpu.tantandemo.login.RegistTwoActivity">
+
+        <TextView
+            android:id="@+id/tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="验证码短信已发送至:"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="@{regist.showPhone}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/linCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tip2"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etCode1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:addTextChangedListener="@{regist.watcher1}"
+                android:background="@{regist.Code1.get()!=null ? @drawable/code_focus : @drawable/code_unfocus}"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@+id/etCode2"
+                android:text="@={regist.Code1.get()}"
+                android:textColor="@color/colorTheme"
+                android:textCursorDrawable="@android:color/transparent"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/etCode2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:addTextChangedListener="@{regist.watcher2}"
+                android:background="@{regist.Code2.get()!=null  ? @drawable/code_focus : @drawable/code_unfocus}"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusDown="@+id/etCode3"
+                android:nextFocusUp="@id/etCode1"
+                android:text="@={regist.Code2.get()}"
+                android:textColor="@color/colorTheme"
+                android:textCursorDrawable="@android:color/transparent"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/etCode3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:addTextChangedListener="@{regist.watcher3}"
+                android:background="@{regist.Code3.get()!=null  ? @drawable/code_focus : @drawable/code_unfocus}"
+                android:ems="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:nextFocusDown="@+id/etCode4"
+                android:nextFocusUp="@id/etCode2"
+                android:text="@={regist.Code3.get()}"
+                android:textColor="@color/colorTheme"
+                android:textCursorDrawable="@android:color/transparent"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/etCode4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:addTextChangedListener="@{regist.watcher4}"
+                android:background="@{regist.Code4.get()!=null  ? @drawable/code_focus : @drawable/code_unfocus}"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:nextFocusUp="@id/etCode3"
+                android:text="@={regist.Code4.get()}"
+                android:textColor="@color/colorTheme"
+                android:textCursorDrawable="@android:color/transparent"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linCode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:visibility="@{regist.codeSendShow?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="没有收到验证码？"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{regist.onSendCodeClick}"
+                android:text=" 重新发送"
+                android:textColor="@color/colorTheme"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linCode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="@{regist.codeTimeText.get()}"
+            android:textSize="12sp"
+            android:visibility="@{regist.codeTimeShow?View.VISIBLE:View.GONE}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorTheme"
+            android:enabled="@{regist.oneNext}"
+            android:onClick="@{regist.onNextClick}"
+            android:text="继续"
+            android:textColor="@drawable/sel_regist_text"/>
+
+    </RelativeLayout>
+</layout>

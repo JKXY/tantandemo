@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.wanpu.tantandemo.main.MainActivity">
+
+    <data>
+
+        <variable
+            name="isLoading"
+            type="Boolean"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/mianContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorTheme">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"/>
+            </android.support.v7.widget.Toolbar>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_btn_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/mainUnlike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:src="@drawable/main_unlike"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/main_btn_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/main_btn_bg"
+                        android:src="@drawable/main_find"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_btn_bg"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/mainlike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:src="@drawable/main_like"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/toolbar"
+                android:layout_weight="1"/>
+
+
+            <RelativeLayout
+                android:id="@+id/relLoading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/toolbar"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:visibility="@{isLoading?View.VISIBLE:View.GONE}">
+
+                <com.wanpu.tantandemo.widget.ScanPersonView
+                    android:id="@+id/scanPersonView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="150dp"
+                    android:text="正在查找附近的人..."
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/naviLeft"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="@color/mainLeftbg"
+            app:headerLayout="@layout/main_left_header_layout"
+            />
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/naviRight"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/mainLeftbg"
+            app:headerLayout="@layout/main_left_header_layout"
+            app:menu="@menu/main_left_menu"
+            />
+    </android.support.v4.widget.DrawerLayout>
+</layout>

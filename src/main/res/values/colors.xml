@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorTheme">#D34530</color>
+    <color name="colorPrimary">#D34530</color>
+    <color name="colorPrimaryDark">#D34530</color>
+    <color name="colorAccent">#D34530</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="navigationBarColor">#D34530</color>
+    <color name="careStickColor">#ECECEC</color>
+    <color name="mainLeftbg">#0F2027</color>
+    <color name="white">#FFFFFF</color>
+</resources>

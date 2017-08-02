@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="regist"
+            type="com.wanpu.tantandemo.login.RegistViewModel"/>
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wanpu.tantandemo.login.RegistOneActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:text="@={regist.areaCode.id}"
+                android:drawableRight="@drawable/arrow_down"
+                android:drawableBottom="@drawable/shape_gray_line"
+                android:textColor="@android:color/black"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入手机号码"
+                android:layout_weight="2.5">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:inputType="phone"
+                    android:text="@={regist.phone}"
+                    android:addTextChangedListener="@{regist.watcher}"
+                    android:layout_height="wrap_content"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorTheme"
+            android:enabled="@{regist.oneNext}"
+            android:onClick="@{regist.onNextClick}"
+            android:text="继续"
+            android:textColor="@drawable/sel_regist_text"/>
+    </RelativeLayout>
+</layout>

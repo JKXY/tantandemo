@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iconImg"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            app:placeholderImage="@android:color/darker_gray"
+            app:progressBarImage="@drawable/phone_default"
+            app:progressBarImageScaleType="centerCrop"
+            app:roundAsCircle="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13dp"
+            android:text="Jack"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="54dp"
+            android:layout_marginTop="8dp"
+            android:text="点击查看/编辑"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:drawableLeft="@drawable/left_icon_tantan"
+            android:drawablePadding="20dp"
+            android:text="探探"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/left_icon_anonymous"
+            android:drawablePadding="20dp"
+            android:text="匿名暗恋表白"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/left_icon_set"
+            android:drawablePadding="20dp"
+            android:text="设置"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/left_icon_new"
+            android:drawablePadding="20dp"
+            android:text="新手引导"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/left_icon_recommend"
+            android:drawablePadding="20dp"
+            android:text="推荐给好友"
+            android:textColor="@drawable/sel_main_left_text"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+</layout>

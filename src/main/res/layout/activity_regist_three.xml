@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="regist"
+            type="com.wanpu.tantandemo.login.RegistThreeViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="45dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="50dp"
+                    android:hint="昵称"
+                    app:counterMaxLength="8">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:addTextChangedListener="@{regist.watcher}"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvTimeTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/inputLayout"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="出生日期"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTimeTip"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableRight="@drawable/arrow_down"
+                    android:gravity="center_vertical"
+                    android:text="2000/1/1"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"/>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/tvTime"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@android:color/darker_gray"/>
+
+
+                <LinearLayout
+                    android:id="@+id/linSex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTimeTip"
+                        android:layout_weight="1"
+                        android:text="显示性别"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="18dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/rgSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onCheckedChanged="@{regist.onCheckedChanged}"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbMan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="男"/>
+
+                        <RadioButton
+                            android:id="@+id/rbWaman"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="女"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/inputLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linSex"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="设置密码(6-20位)"
+                    app:counterMaxLength="20">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:addTextChangedListener="@{regist.watcher2}"/>
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorTheme"
+            android:enabled="@{regist.oneNext}"
+            android:onClick="@{regist.onNextClick}"
+            android:text="注册"
+            android:textColor="@drawable/sel_regist_text"/>
+    </RelativeLayout>
+</layout>

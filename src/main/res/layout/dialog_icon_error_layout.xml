@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_card_bg">
+
+
+    <RelativeLayout
+        android:id="@+id/relICon"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/personImg"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@android:color/darker_gray"
+            app:progressBarImage="@drawable/phone_default"
+            app:progressBarImageScaleType="centerCrop"
+            app:roundBottomLeft="true"
+            app:roundBottomRight="true"
+            app:roundTopLeft="true"
+            app:roundTopRight="true"
+            app:roundedCornerRadius="10dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_error"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relICon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请换上"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvIconTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="真实头像"
+            android:textColor="@color/colorTheme"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linTips"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="由于头像不真实，你会被&quot;屏蔽&quot;"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"/>
+
+
+    <LinearLayout
+        android:id="@+id/linTip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTip1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无法得到配对"
+            android:textColor="@color/colorTheme"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="哦，快去换个头像吧！"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linTip2"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_start_tantan_btn_unpess"
+        android:text="更换头像"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+</RelativeLayout>
