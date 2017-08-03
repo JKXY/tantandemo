@@ -3,4 +3,6 @@
 
 里面主要关键点有：DataBinding的使用，人脸检测，仿探探雷达扫描附近的人效果，仿探探卡片滑动效果，转场动画等
 
-![](http://oqdskvwmf.bkt.clouddn.com/rlsb.gif)![](http://oqdskvwmf.bkt.clouddn.com/rdsm.gif)![](http://oqdskvwmf.bkt.clouddn.com/kpshd.gif)
+![](http://oqdskvwmf.bkt.clouddn.com/rlsb.gif)
+![](http://oqdskvwmf.bkt.clouddn.com/rdsm.gif)
+![](http://oqdskvwmf.bkt.clouddn.com/kpshd.gif)
